@@ -24,7 +24,9 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet ./dlComics/bin/Debug/net6.0/dlComics.dll
+      run: dotnet ./dlComics/bin/Debug/net6.0/dlComics.dll | tee output.log
+    - name: CopyLog
+      run: cp output.log ./dlComics/bin/Debug/net6.0/data/output.log
       
       
     - name: Upload a Build Artifact
