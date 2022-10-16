@@ -22,4 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet run
+      run: dotnet ./dlComics/bin/Debug/net6.0/dlComics.dll
+
